@@ -89,12 +89,17 @@ import webserialEsp32InsetIconURL from "./webserialEsp32/webserialEsp-small.png"
 
 import webserialPicoboardImage from "./webserialPicoboard/webserialPicoboard.png";
 import webserialPicoboardInsetIconURL from "./webserialPicoboard/webserialPicoboard-small.png";
+import webserialmicrobitIconURL from "./webserialMicrobit/microbit.png";
+import webserialmicrobitInsetIconURL from "./webserialMicrobit/microbit-small.svg";
 
 import mqttImage from "./mqtt/mqtt.png";
 import mqttInsetIconURL from "./mqtt/mqtt-small.png";
 
 import linenotifyImage from "./linenotify/linenotify.svg";
 import linenotifyInsetIconURL from "./linenotify/linenotify_small.svg";
+
+import telegrambotImage from "./telegrambot/telegrambot.svg";
+import telegrambotInsetIconURL from "./telegrambot/telegrambot_small.svg";
 
 import ml2scratchIconURL from "./ml2scratch/ml2scratch.png";
 import ml2scratchInsetIconURL from "./ml2scratch/ml2scratch-small.png";
@@ -120,10 +125,18 @@ import webserialLinkit7697InsetIconURL from "./webserialLinkit7697/webserialLink
 import openaiImage from "./openai/openai.png";
 import openaiInsetIconURL from "./openai/openai-small.svg";
 
+import geminiImage from "./gemini/gemini.png";
+import geminiInsetIconURL from "./gemini/gemini-small.svg";
+
 import facemesh2scratchIconURL from "./facemesh2scratch/facemesh2scratch.png";
 import facemesh2scratchInsetIconURL from "./facemesh2scratch/facemesh2scratch-small.png";
 import handpose2scratchIconURL from "./handpose2scratch/handpose2scratch.png";
 import handpose2scratchInsetIconURL from "./handpose2scratch/handpose2scratch-small.png";
+
+import davinciImage from "./davinci/davinci.png";
+import davinciInsetIconURL from "./davinci/davinci-small.png";
+import llmstudioImage from "./llmstudio/llmstudio.svg";
+import llmstudioInsetIconURL from "./llmstudio/llmstudio-small.png";
 
 const version = "v2-0.2.4";
 
@@ -706,6 +719,25 @@ const extensions = [
     //helpLink: ''
   },
   {
+    name: "TelegramBot",
+    extensionId: "telegrambot",
+    collaborator: "estea chen",
+    iconURL: telegrambotImage,
+    insetIconURL: telegrambotInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Use Line Notify to send messages."
+        description="Use Line Notify to send messages."
+        id="gui.extension.telegrambot.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    internetConnectionRequired: true,
+    bluetoothRequired: false,
+    //helpLink: ''
+  },
+  {
     name: (
       <FormattedMessage
         defaultMessage="QR Code"
@@ -1065,6 +1097,111 @@ const extensions = [
     useAutoScan: false,
     helpLink: "https://openai.com/",
   },
+  {
+    name: "Gemini",
+    extensionId: "gemini",
+    collaborator: "estea chen",
+    iconURL: geminiImage,
+    insetIconURL: geminiInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Use Gemini’s models to process natural language and generate images."
+        description="Use Gemini’s models to process natural language and generate images."
+        id="gui.extension.gemini.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    // bluetoothRequired: false,
+    internetConnectionRequired: true,
+    // launchPeripheralConnectionFlow: false,
+    useAutoScan: false,
+    helpLink: "https://www.gemini.com/",
+  },
+  {
+    name: "webserialmicro:bit",
+    extensionId: "webserialmicrobit",
+    collaborator: "micro:bit estea chen",
+    iconURL: webserialmicrobitIconURL,
+    insetIconURL: webserialmicrobitInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Connect your projects with the world."
+        description="Description for the 'micro:bit' extension"
+        id="gui.extension.microbit.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    //bluetoothRequired: true,
+    internetConnectionRequired: true,
+    launchPeripheralConnectionFlow: false,
+    useAutoScan: false,
+    connectionIconURL: microbitConnectionIconURL,
+    connectionSmallIconURL: microbitConnectionSmallIconURL,
+    connectingMessage: (
+      <FormattedMessage
+        defaultMessage="Connecting"
+        description="Message to help people connect to their micro:bit."
+        id="gui.extension.microbit.connectingMessage"
+      />
+    ),
+    //helpLink: "https://scratch.mit.edu/microbit",
+  }, 
+  {
+    name:(
+      <FormattedMessage
+        defaultMessage="DaVinci"
+        description="MediaTek DaVinci extension"
+        id="gui.extension.davinci.title"
+      />
+    ),
+    extensionId: "davinci",
+    collaborator: "estea chen ",
+    iconURL: davinciImage,
+    insetIconURL: davinciInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="MediaTek DaVinci AI."
+        description="MediaTek DaVinci AI. extension"
+        id="gui.extension.davinci.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    // bluetoothRequired: false,
+    internetConnectionRequired: true,
+    // launchPeripheralConnectionFlow: false,
+    useAutoScan: false,
+    helpLink: "https://prod.dvcbot.net/",
+    },   
+    {
+    name:(
+      <FormattedMessage
+        defaultMessage="LLM Studio"
+        description="LLM Studio extension"
+        id="gui.extension.llmstudio.title"
+      />
+    ),
+    extensionId: "llmstudio",
+    collaborator: "estea chen ",
+    iconURL: llmstudioImage,
+    insetIconURL: llmstudioInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="LLM Studio AI."
+        description="LLM Studio AI. extension"
+        id="gui.extension.llmstudio.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    // bluetoothRequired: false,
+    internetConnectionRequired: true,
+    // launchPeripheralConnectionFlow: false,
+    useAutoScan: false,
+    helpLink: "https://lmstudio.ai/",
+    },
 ];
 export { extensions };
 export default extensions;
